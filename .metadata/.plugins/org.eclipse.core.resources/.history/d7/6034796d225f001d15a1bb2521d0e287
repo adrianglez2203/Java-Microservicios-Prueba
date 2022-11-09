@@ -1,0 +1,8 @@
+package com.springboot.apirest.app.item.service;
+
+import org.springframework.stereotype.Service;
+import com.springboot.apirest.app.item.service.;
+@Service
+public class LocalidadServicioImplementacion extends ILocalidadService{
+
+}

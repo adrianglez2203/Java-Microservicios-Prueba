@@ -1,0 +1,33 @@
+package com.springboot.apirest.app.asignar.localidades.services;
+
+import java.util.List;
+
+import com.springboot.apirest.app.asignar.localidades.models.entity.Asignacion;
+
+public class AsignacionesServiceFeign implements IAsignacionService {
+
+	@Override
+	public List<Asignacion> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Asignacion findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Asignacion save(Asignacion asignacion) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String deleteById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

@@ -1,0 +1,8 @@
+package com.springboot.apirest.app.eventos.clientes;
+
+import org.springframework.cloud.openfeign.FeignClient;
+
+@FeignClient(name = "servicio-evento", url = "localhost:8001")
+public interface EventoClienteRest {
+
+}

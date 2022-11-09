@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.item.dao;
+
+public interface LocalidadDao {
+
+}

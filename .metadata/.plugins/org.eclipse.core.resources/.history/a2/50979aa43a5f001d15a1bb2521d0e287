@@ -1,0 +1,21 @@
+package com.springboot.apirest.app.eventos.models.service;
+
+import java.util.List;
+
+import com.springboot.apirest.app.eventos.models.entity.Evento;
+
+public class EventoServiceFeign implements IEventoService {
+
+	@Override
+	public List<Evento> findAll() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Evento findById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

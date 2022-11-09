@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.item.service;
+
+public interface ILocalidadService {
+
+}

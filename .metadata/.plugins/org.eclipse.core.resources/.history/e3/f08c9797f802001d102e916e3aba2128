@@ -1,0 +1,46 @@
+package com.example.demo.user;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+@Service
+public class UserService {
+	
+	private final UserRepository userRepository;
+	
+	@Autowired
+	public UserService(UserRepository userRepository) {
+		super();
+		this.userRepository = userRepository;
+	}
+
+
+	public List<User> getUsers(){
+		return userRepository.findAll();
+	}
+
+
+	public void addNewUser(User user) {
+		Optional<User> userByEmail = userRepository.findUserByEmail(user.getEmail());
+		if (userByEmail.isPresent()) {
+			throw new IllegalStateException("Email Taken");
+		}
+		userRepository.save(user);
+		System.out.println(user);
+	}
+
+
+	public void deleteUser(Long userId) {
+		// TODO Auto-generated method stub
+		boolean exist = userRepository.existsById(userId);
+		if (!exist) {
+			throw new IllegalStateException("User no Exist");
+			
+		}
+		userRepository.deleteById(userId);
+	}
+		
+}

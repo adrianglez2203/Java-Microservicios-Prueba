@@ -1,0 +1,46 @@
+package com.springboot.apirest.app.asignar.localidades.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.springboot.apirest.app.asignar.localidades.dao.AsignacionDao;
+import com.springboot.apirest.app.asignar.localidades.models.entity.Asignacion;
+@Service
+public class AsignacionServiceImplementacion implements IAsignacionService{
+	
+	
+	@Autowired(required = true)
+	private AsignacionDao asignacionDao;
+	
+	@Override
+	@Transactional(readOnly = true)
+	public List<Asignacion> findAll() {
+
+		return (List<Asignacion>) asignacionDao.findAll();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Asignacion findById(Long id) {
+
+		return asignacionDao.findById(id).orElse(null);
+	}
+
+	@Override
+	@Transactional
+	public Asignacion save(Asignacion asignacion) {
+
+		return asignacionDao.save(asignacion);
+	}
+
+	@Override
+	@Transactional
+	public String deleteById() {
+
+		return null;
+	}
+
+}

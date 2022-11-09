@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.eventos.models.service;
+
+public interface IEventoService {
+
+}

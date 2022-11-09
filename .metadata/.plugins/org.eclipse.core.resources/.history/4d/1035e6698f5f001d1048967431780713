@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.item.response;
+
+public class ResponseHandler {
+
+}

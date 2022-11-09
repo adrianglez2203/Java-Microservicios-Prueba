@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.asignar.localidades.clientes;
+
+public class LocalizacionesClienteRest {
+
+}

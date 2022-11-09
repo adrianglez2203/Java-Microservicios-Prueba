@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.asignar.localidades.models.entity;
+
+public class Localidad {
+
+}

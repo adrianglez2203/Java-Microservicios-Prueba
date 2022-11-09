@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.asignar.localidades.services;
+
+public class AsignacionServiceImplementacion {
+
+}

@@ -1,0 +1,30 @@
+package com.springboot.apirest.app.eventos.models.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.hibernate.cache.spi.support.AbstractReadWriteAccess.Item;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.springboot.apirest.app.eventos.clientes.EventoClienteRest;
+import com.springboot.apirest.app.eventos.models.entity.Evento;
+
+public class EventoServiceFeign implements IEventoService {
+
+	
+	@Autowired
+	private EventoClienteRest eventoClienteRest;
+	
+	@Override
+	public List<Evento> findAll() {
+		
+		return eventoClienteRest.listar().stream().map(e -> Item(e, 1).collect(Collectors.toList()));
+	}
+
+	@Override
+	public Evento findById(Long id) {
+		
+		return null;
+	}
+
+}

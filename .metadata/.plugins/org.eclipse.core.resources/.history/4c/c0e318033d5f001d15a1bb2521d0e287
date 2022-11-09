@@ -1,0 +1,30 @@
+package com.springboot.apirest.app.asignar.localidades.controllers;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.springboot.apirest.app.asignar.localidades.models.entity.Asignacion;
+import com.springboot.apirest.app.asignar.localidades.services.IAsignacionService;
+
+@RestController
+@RequestMapping("/api")
+public class AsignacionController {
+	
+	@Autowired
+	private IAsignacionService asignacionService;
+	
+	@GetMapping("/listar")
+	public List<Asignacion> listar(){
+		return asignacionService.findAll();
+		
+	}
+	@GetMapping("/listar/{id}")
+	public Asignacion detalle(@PathVariable Long id) {
+		return asignacionService.findById(id);
+	}
+}

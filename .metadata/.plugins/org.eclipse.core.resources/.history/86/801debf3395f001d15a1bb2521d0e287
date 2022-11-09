@@ -1,0 +1,5 @@
+package com.springboot.apirest.app.eventos.clientes;
+
+public interface EventoClienteRest {
+
+}

@@ -1,0 +1,40 @@
+package com.springboot.apirest.app.item.controllers;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.springboot.apirest.app.item.models.Localidad;
+import com.springboot.apirest.app.item.service.ILocalidadService;
+
+@RestController
+@RequestMapping("/api")
+public class LocalidadController {
+	
+	@Autowired
+	private ILocalidadService localidadService;
+	
+	@GetMapping("/listar")
+	public List<Localidad> listar(){
+		return localidadService.findAll();
+	}
+	
+	@GetMapping("/listar/{id}")
+	public ResponseEntity<Localidad> detalle(@PathVariable Long id) {
+		 Optional<Localidad> localidad = localidadService.findById(id);
+		 
+	    if(localidad.isPresent()) {
+	        return ResponseEntity.ok().body(localidad.get());
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+		
+	}
+}	

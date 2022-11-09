@@ -1,0 +1,5 @@
+java.util.List
+
+public class Hello(){
+	List<String> c = new Arr
+}

@@ -1,0 +1,28 @@
+package com.springboot.apirest.app.eventos.models.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.springboot.apirest.app.eventos.clientes.EventoClienteRest;
+import com.springboot.apirest.app.eventos.models.entity.Evento;
+
+public class EventoServiceFeign implements IEventoService {
+
+	
+	@Autowired
+	private EventoClienteRest eventoClienteRest;
+	
+	@Override
+	public List<Evento> findAll() {
+		
+		return eventoClienteRest.listar();
+	}
+
+	@Override
+	public Evento findById(Long id) {
+		
+		return null;
+	}
+
+}
